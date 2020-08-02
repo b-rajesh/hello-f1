@@ -1,5 +1,7 @@
 # A Simple nodeJS service to get F1 deatail from argast for docker and vm image
 
+## Please use this wisely as I am have integrated to a PHP site, soon I will introduce mysql/postgres with this service, until then.....
+
 ## Docker build
     docker build -t hello-f1 . no-cache
 ## Packer build
