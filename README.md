@@ -53,3 +53,12 @@ X-Powered-By: Express
     }
 }
 ```
+
+## Other API Calls to test
+    http ::3000/hello-f1/f1/drivers/alonso
+    http ::3000/hello-f1/f1/2010/drivers
+    http ::3000/hello-f1/f1/drivers/alonso
+
+    http ::3000/hello-f1/f1/current
+    http ::3000/hello-f1/f1/2012
+    http ::3000/hello-f1/f1/current/last/results
