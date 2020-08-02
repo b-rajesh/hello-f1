@@ -1,0 +1,73 @@
+{
+    "description": "Create an F1 API Image",
+    "variables": {
+      "machine_type": "f1-micro",
+      "region": "australia-southeast1",
+      "zone": "australia-southeast1-a",
+      "purpose": "f1-api-v1",
+      "image_family": "ubuntu-1804-lts",
+      "project_id": "Your_GCP_Project_Id"
+    },
+    "builders": [
+      {
+        "name": "f1-api-v1",
+        "type": "googlecompute",
+        "project_id": "{{user `project_id`}}",
+        "machine_type": "{{user `machine_type`}}",
+        "source_image_family": "{{user `image_family`}}",
+        "region": "{{user `region`}}",
+        "zone": "{{user `zone`}}",
+        "image_description": "F1 API on Ubuntu 18.04 LTS",
+        "image_name": "{{user `purpose`}}",
+        "disk_size": 16,
+        "disk_type": "pd-ssd",
+        "ssh_username": "ubuntu",
+        "tags": ["f1-api-v1"]
+      }
+    ],
+    
+    "provisioners": [
+      {
+        "type": "shell",
+        "inline": [
+            "sudo mkdir -p /usr/src/app"
+        ],
+        "only": [
+            "f1-api-v1"
+        ]
+      },
+      {
+        "type": "file",
+        "source": "install-node.sh",
+        "destination": "/tmp/",
+        "only": [
+          "f1-api-v1"
+        ]
+      },
+      {
+        "type": "file",
+        "source": "src",
+        "destination": "/tmp/",
+        "only": [
+          "f1-api-v1"
+        ]
+      },
+      {
+        "type": "file",
+        "source": "package.json",
+        "destination": "/tmp/",
+        "only": [
+          "f1-api-v1"
+        ]
+      },
+      {
+        "type": "shell",
+        "inline": [
+            "sudo sh /tmp/install-node.sh"
+        ],
+        "only": [
+            "f1-api-v1"
+        ]
+      }
+    ]
+  }
