@@ -22,6 +22,9 @@ app.get('/hello-f1/*', (req, res) => {
   
   });
 
-  app.listen(3000, () =>
+app.get('/f1/health', (req, res) => {
+  res.send({ hello: 'I am fine' });
+});
+app.listen(3000, () =>
   console.log(`F1 api will be listening on port 3000 !`),
 );
