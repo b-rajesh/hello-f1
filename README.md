@@ -1,6 +1,12 @@
 # A Simple nodeJS service to get F1 deatail from argast for docker and vm image
 
-## Please use this wisely as I am have integrated to a PHP site, soon I will introduce mysql/postgres with this service, until then.....
+## Please use this wisely as I am have integrated to a PHP site(http://ergast.com/mrd/), soon I will introduce mysql/postgres with this service, until then.....
+
+## To create a image for GCP to reference it while deploying through Terraform - You need to install Packer(https://www.packer.io/)
+```sh
+$ packer build hello-f1-gcp-image.json
+```
+
 
 ## Docker build
     docker build -t hello-f1 . no-cache
