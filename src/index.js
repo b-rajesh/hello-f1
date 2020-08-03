@@ -3,7 +3,7 @@ const app = express();
 const axios = require('axios');
 
 app.get('/f1-api/*', (req, res) => {
-    var newpatahparam = req.path.split('/hello-f1/')[1]
+    var newpatahparam = req.path.split('/f1-api/')[1]
     var url = 'http://ergast.com/api/'+newpatahparam
     axios.get(url)
         .then(response => {
