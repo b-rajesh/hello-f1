@@ -2,18 +2,19 @@
 
 ## Please use this wisely as I am have integrated to a PHP site(http://ergast.com/mrd/), soon I will introduce mysql/postgres with this service, until then.....
 
-## To create a image for GCP to reference it while deploying through Terraform - You need to install Packer(https://www.packer.io/)
+## Packer build : To create a image for GCP to reference it while deploying through Terraform - You need to install Packer(https://www.packer.io/)
 ```sh
 $ packer build hello-f1-gcp-image.json
 ```
 
 
 ## Docker build
-    docker build -t hello-f1 . no-cache
-## Packer build
-    packer build hello-f1-gcp-image.json
+    docker build -t hello-f1 . --no-cache
+
 ## Usage
-    docker run -p 3000:3000 --rm -t hello-f1
+    $ docker run -p 3000:3000 --rm -t hello-f1
+    $ docker run --name hello-f1-instance  -p 3000:3000 -d hello-f1 # to run on backgroud 
+
 
 ## Test it with httpie
     http :3000/f1-api/f1/drivers.json
