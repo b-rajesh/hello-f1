@@ -10,7 +10,7 @@
     docker run -p 3000:3000 --rm -t hello-f1
 
 ## Test it with httpie
-    http :3000/hello-f1/f1/drivers.json
+    http :3000/f1-api/f1/drivers.json
 
 ## Output would look like this
 ```
@@ -55,10 +55,10 @@ X-Powered-By: Express
 ```
 
 ## Other API Calls to test
-    http ::3000/hello-f1/f1/drivers/alonso
-    http ::3000/hello-f1/f1/2010/drivers
-    http ::3000/hello-f1/f1/drivers/alonso
+    http ::3000/f1-api/f1/drivers/alonso
+    http ::3000/f1-api/f1/2010/drivers
+    http ::3000/f1-api/f1/drivers/alonso
 
-    http ::3000/hello-f1/f1/current
-    http ::3000/hello-f1/f1/2012
-    http ::3000/hello-f1/f1/current/last/results
+    http ::3000/f1-api/f1/current
+    http ::3000/f1-api/f1/2012
+    http ::3000/f1-api/f1/current/last/results
