@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 
-app.get('/hello-f1/*', (req, res) => {
+app.get('/f1-api/*', (req, res) => {
     var newpatahparam = req.path.split('/hello-f1/')[1]
     var url = 'http://ergast.com/api/'+newpatahparam
     axios.get(url)
@@ -22,7 +22,7 @@ app.get('/hello-f1/*', (req, res) => {
   
   });
 
-app.get('/f1/health', (req, res) => {
+app.get('/f1-api/health', (req, res) => {
   res.send({ hello: 'I am fine' });
 });
 app.listen(3000, () =>
