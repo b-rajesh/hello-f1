@@ -7,7 +7,7 @@
 ## Packer build
     packer build hello-f1-gcp-image.json
 ## Usage
-    docker run -p 8080:80 -p 8443:443 --rm -t hello-f1
+    docker run -p 3000:3000 --rm -t hello-f1
 
 ## Test it with httpie
     http :3000/hello-f1/f1/drivers.json
