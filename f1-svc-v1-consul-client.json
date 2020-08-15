@@ -1,0 +1,10 @@
+{
+  "service": {
+    "name": "f1-v1-svc",
+    "tags": [
+      "microservice",
+      "nodejs"
+    ],
+    "port": 3000
+  }
+}
